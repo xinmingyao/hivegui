@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window size="300,220" roundcorner="4,4">
+	<Font name="楷体" size="14" default="true" />
+	<Container bkimage="./login/bk_image.png" >
+		<Label text="用户登录" float="true" pos="5, 5, 80, 20"/>
+		<Button name="closebtn" float="true" pos="275, 0, 300, 20" tooltip="退出程序" normalimage="file='./login/frame_btn_close_normal.bmp' mask='#FFFF00FF'" hotimage="file='./login/frame_btn_close_hot.bmp' mask='#FFFF00FF'" pushedimage="file='./login/frame_btn_close_down.bmp' mask='#FFFF00FF'"/>
+		<Label text="{b}账号：{/b}" float="true" showhtml="true" pos="60, 105, 100, 125" />
+		<Label text="{b}密码：{/b}" float="true" showhtml="true" pos="60, 140, 100, 160" />
+		<Edit name="nameedit" float="true" pos="120, 105, 240, 125" />
+		<Edit name="passwdedit" password="true" float="true" pos="120, 140, 240, 160" />
+		<Button name="registerbtn" text="注册" float="true" bordercolor="#e50010" bordersize="1" bkcolor="#bcc1b4" tooltip="注册新帐号" pos="90,185,130,205" />
+		<Button name="loginbtn" text="登录" float="true" bordercolor="#e50010" bordersize="1" bkcolor="#bcc1b4" tooltip="登录帐号" pos="170,185,210,205" />
+	</Container>
+</Window>
