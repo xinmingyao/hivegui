@@ -49,10 +49,8 @@ LRESULT LoginUI::loop(UINT uMsg, WPARAM wParam, LPARAM lParam) // handle message
 		msgpack::unpack(buf->b, buf->len, NULL, &mempool, &deserialized);
 		User user;
 		deserialized.convert(&user);
-#if defined(NDEBUG)
-		free(buf->b);
-		free(buf);
-#endif
+		hive_free(buf->b);
+		hive_free(buf);
 		MessageBox(NULL,"LOGIN MSG",_T("µÇÂ¼"),MB_OK);
         return 0;
     }
