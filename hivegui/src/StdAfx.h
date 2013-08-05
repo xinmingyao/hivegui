@@ -14,7 +14,7 @@
 #include "../lib/UIlib.h"
 
 using namespace DuiLib;
-
+#pragma warning(disable:4244) 
 #ifdef _DEBUG
 #   ifdef _UNICODE
 #       pragma comment(lib, "./lib/DuiLib_ud.lib")
