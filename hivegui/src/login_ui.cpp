@@ -42,7 +42,18 @@ void LoginUI::Notify(TNotifyUI& msg)
 	}
 LRESULT LoginUI::loop(UINT uMsg, WPARAM wParam, LPARAM lParam) // handle message from hive cell
     {
-        MessageBox(NULL,"LOGIN MSG",_T("登录"),MB_OK);
+		struct message_buf * buf =(struct message_buf *)lParam;
+		char * data = buf->b;
+		msgpack::zone mempool;
+		msgpack::object deserialized;
+		msgpack::unpack(buf->b, buf->len, NULL, &mempool, &deserialized);
+		User user;
+		deserialized.convert(&user);
+#if defined(NDEBUG)
+		free(buf->b);
+		free(buf);
+#endif
+		MessageBox(NULL,"LOGIN MSG",_T("登录"),MB_OK);
         return 0;
     }
 LRESULT LoginUI::HandleMessage(UINT uMsg,WPARAM wParam,LPARAM lParam)
@@ -63,7 +74,7 @@ LRESULT LoginUI::HandleMessage(UINT uMsg,WPARAM wParam,LPARAM lParam)
 		//获取边框最大最小值
 		case WM_GETMINMAXINFO: lRes=OnGetMinMaxInfo(uMsg,wParam,lParam,bHandled);break;
 		case WM_DESTROY:       ::PostQuitMessage(0);break;
-		case WM_CELL:  lRes = loop(uMsg,wParam,lParam);break;
+		case WM_HIVE_CELL:  lRes = loop(uMsg,wParam,lParam);break;
 		default:               bHandled=FALSE;
 		}
 		if(bHandled)

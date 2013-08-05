@@ -13,7 +13,7 @@ cell.dispatch {
 		--print(a.t)
 		print(type(tonumber(login[1])))
 		--c.post_message(login[1],"test")
-		print(c.post_message(tonumber(login[1]),"test"))
+		print(c.post_message(tonumber(login[1]),8888,login))
 		print("=======")
 	end
 }
