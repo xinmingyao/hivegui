@@ -14,6 +14,7 @@ xcopy /Y  hive ..\\Debug\\hive /s/e
 
 
 copy /Y hivecore.lib ..\\hivegui\\lib
+copy /Y src\\hive.h ..\\hivegui\\lib
 copy /Y lua52\\lua52.lib ..\\hivegui\\lib
 cd ..
 
