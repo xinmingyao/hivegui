@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window size="1400,900" roundcorner="4,4">
+	<Font name="楷体" size="14" default="true" />
+	<Container bkimage="./login/images.jpg" >
+		
+	</Container>
+</Window>

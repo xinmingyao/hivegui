@@ -37,11 +37,13 @@ extern "C" {
 	#include "../lib/lauxlib.h" 
 	#include "../lib/lualib.h" 
 	#include "../lib/hive.h" 
+    #include "../lib/desktop_driver.h"
 }
 
 #pragma comment(lib,"./lib/lua52.lib")
 #pragma comment(lib,"./lib/msgpackd.lib")
 #pragma comment(lib,"./lib/hivecore.lib")
+#pragma comment(lib,"./lib/desktop_driver.lib")
 
 #include  <winsock2.h> 
 #pragma comment(lib, "WS2_32")

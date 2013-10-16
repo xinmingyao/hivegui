@@ -1,5 +1,6 @@
 #include "hive_gui.h"
 #include "login_ui.h"
+#include "desktop_ui.h"
 #include "msgpack_protocol.h"
 void LoginUI::Notify(TNotifyUI& msg)
 	{
@@ -49,9 +50,14 @@ LRESULT LoginUI::loop(UINT uMsg, WPARAM wParam, LPARAM lParam) // handle message
 		msgpack::unpack(buf->b, buf->len, NULL, &mempool, &deserialized);
 		User user;
 		deserialized.convert(&user);
-		hive_free(buf->b);
-		hive_free(buf);
+		hive_free((char *)buf->b);
+		hive_free((char *)buf);
 		MessageBox(NULL,"LOGIN MSG",_T("µÇÂ¼"),MB_OK);
+		DesktopUI * desktop = new DesktopUI();
+		if( desktop == NULL ) return 0;
+		desktop->Create(NULL, _T("share desktop................"), UI_WNDSTYLE_FRAME, WS_EX_WINDOWEDGE);
+		desktop->CenterWindow();
+		desktop->ShowWindow(true);
         return 0;
     }
 LRESULT LoginUI::HandleMessage(UINT uMsg,WPARAM wParam,LPARAM lParam)

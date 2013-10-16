@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Window size="300,220" roundcorner="4,4">
 	<Font name="楷体" size="14" default="true" />
-	<Container bkimage="./login/bk_image.png" >
+	<Container bkimage="./login/images.jpg" >
 		<Label text="用户登录" float="true" pos="5, 5, 80, 20"/>
 		<Button name="closebtn" float="true" pos="275, 0, 300, 20" tooltip="退出程序" normalimage="file='./login/frame_btn_close_normal.bmp' mask='#FFFF00FF'" hotimage="file='./login/frame_btn_close_hot.bmp' mask='#FFFF00FF'" pushedimage="file='./login/frame_btn_close_down.bmp' mask='#FFFF00FF'"/>
 		<Label text="{b}账号：{/b}" float="true" showhtml="true" pos="60, 105, 100, 125" />

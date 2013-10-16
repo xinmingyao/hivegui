@@ -18,3 +18,11 @@ copy /Y src\\hive.h ..\\hivegui\\lib
 copy /Y lua52\\lua52.lib ..\\hivegui\\lib
 cd ..
 
+call git clone http://github.com/xinmingyao/desktopdriver.git
+echo "begin make desktopdriver ............."
+cd desktopdriver
+make win
+copy /Y desktop_driver.lib ..\\hivegui\\lib
+copy /Y src\\desktop_driver.h ..\\hivegui\\lib
+copy /Y desktop_driver.dll ..\\Debug
+cd ..
